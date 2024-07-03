@@ -2,6 +2,8 @@ import { useState } from "react";
 import GeneralInfo from "./general-info";
 import EducationalExp from "./educational-exp";
 import PracticalExp from "./practical-exp";
+import Cv from "./cv";
+import "../styles/app.css"
 
 export default function App() {
   // states for GeneraInfo()
@@ -49,6 +51,8 @@ export default function App() {
   }
   return (
     <>
+      <main>
+
       <GeneralInfo
         nameValue={name}
         changeName={handleNameChange}
@@ -56,7 +60,7 @@ export default function App() {
         changePhone={handlePhoneChange}
         emailValue={email}
         changeEmail={handleEmailChange}
-      />
+        />
       <EducationalExp
         schoolValue={school}
         changeSchool={handleSchoolChange}
@@ -64,7 +68,7 @@ export default function App() {
         changeStudyTitle={handleStudyTitleChange}
         studyDateValue={studyDate}
         changeStudyDate={handleStudyDateChange}
-      />
+        />
       <PracticalExp
         company={company}
         changeCompany={handleCompanyChange}
@@ -72,7 +76,9 @@ export default function App() {
         changePosition={handlePositionChange}
         responsibilities={responsibilities}
         changeResponsibilities={handleResponsibilitiesChange}
-      />
+        />
+        </main>
+      <Cv />
     </>
   );
 }
