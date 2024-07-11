@@ -1,3 +1,5 @@
+import "../styles/cv.css"
+
 export default function Cv({
   name,
   email,
@@ -10,7 +12,7 @@ export default function Cv({
   studyDate,
 }) {
   return (
-    <>
+    <div id="cv">
       <header>
         <h1>Curriculum Vitae</h1>
         <h2>{name} </h2>
@@ -19,16 +21,16 @@ export default function Cv({
       </header>
       <main>
         <h1>Experience</h1>
-        <h2>{company}</h2>
-        <h2>{position}</h2>
-        <h2>{responsibilities}</h2>
+        <h2>Company: {company}</h2>
+        <h2>Position: {position}</h2>
+        <h2>Responsibilities: {responsibilities}</h2>
       </main>
       <footer>
         <h1>Educational Experience</h1>
-        <h2>{school}</h2>
-        <h2>{studyTitle}</h2>
-        <h2>{studyDate}</h2>
+        <h2>School: {school}</h2>
+        <h2>Title of study: {studyTitle}</h2>
+        <h2>Date of study: {studyDate}</h2>
       </footer>
-    </>
+    </div>
   );
 }
