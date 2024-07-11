@@ -7,20 +7,22 @@ import "../styles/app.css";
 
 export default function App() {
   // states for GeneraInfo()
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [generalSent, setGeneralSent] = useState(false);
+  const [name, setName] = useState("John Doe");
+  const [phone, setPhone] = useState("0795368762");
+  const [email, setEmail] = useState("fake@email.com");
+  const [generalSent, setGeneralSent] = useState(true);
   // states for EducationalExp()
-  const [school, setSchool] = useState("");
-  const [studyTitle, setStudyTitle] = useState("");
+  const [school, setSchool] = useState("The best school");
+  const [studyTitle, setStudyTitle] = useState("the study on nothing");
   const [studyDate, setStudyDate] = useState("");
-  const [educationalExpSent, setEducationalExpSent] = useState(false);
+  const [educationalExpSent, setEducationalExpSent] = useState(true);
   // states for PracticalExp()
-  const [company, setCompany] = useState("");
-  const [position, setPosition] = useState("");
-  const [responsibilities, setResponsibilities] = useState("");
-  const [practicalExpSent, setPracticalExpSent] = useState(false);
+  const [company, setCompany] = useState("The best company ever");
+  const [position, setPosition] = useState("The highest position in the company");
+  const [responsibilities, setResponsibilities] = useState(
+    "Random responsibilities that's too hard to explain here"
+  );
+  const [practicalExpSent, setPracticalExpSent] = useState(true);
 
   // GeneralInfo() states handle function
   function handleNameChange(e) {
