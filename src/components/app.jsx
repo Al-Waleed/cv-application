@@ -10,6 +10,7 @@ export default function App() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [generalSent, setGeneralSent] = useState(false);
   // states for EducationalExp()
   const [school, setSchool] = useState("");
   const [studyTitle, setStudyTitle] = useState("");
@@ -28,6 +29,14 @@ export default function App() {
   }
   function handleEmailChange(e) {
     setEmail(e.target.value);
+  }
+  function handleGeneralSubmit(e) {
+    e.preventDefault();
+    setGeneralSent(true);
+  }
+  function handleGeneralEdit(e) {
+    e.preventDefault();
+    setGeneralSent(false);
   }
   // EducationalExp() states handle function
   function handleSchoolChange(e) {
@@ -59,6 +68,9 @@ export default function App() {
           changePhone={handlePhoneChange}
           emailValue={email}
           changeEmail={handleEmailChange}
+          handleSubmit={handleGeneralSubmit}
+          isGeneralSent={generalSent}
+          edit={handleGeneralEdit}
         />
         <EducationalExp
           schoolValue={school}

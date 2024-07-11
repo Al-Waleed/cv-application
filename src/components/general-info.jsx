@@ -7,13 +7,22 @@ export default function GeneralInfo({
   changeEmail,
   phoneValue,
   changePhone,
+  isGeneralSent,
+  handleSubmit,
+  edit,
 }) {
   return (
-    <div id="general-info">
+    <form id="general-info" onSubmit={handleSubmit}>
       <h1>General Information</h1>
 
       <label htmlFor="name">Name: </label>
-      <input type="text" id="name" value={nameValue} onChange={changeName} />
+      <input
+        type="text"
+        id="name"
+        value={nameValue}
+        onChange={changeName}
+        disabled={isGeneralSent}
+      />
 
       <label htmlFor="email">Email: </label>
       <input
@@ -21,6 +30,7 @@ export default function GeneralInfo({
         id="email"
         value={emailValue}
         onChange={changeEmail}
+        disabled={isGeneralSent}
       />
 
       <label htmlFor="phone">Phone number: </label>
@@ -29,10 +39,13 @@ export default function GeneralInfo({
         id="phone"
         value={phoneValue}
         onChange={changePhone}
+        disabled={isGeneralSent}
       />
 
-      <button type="submit">Submit</button>
-      <button>Edit</button>
-    </div>
+      <button type="submit" disabled={isGeneralSent}>
+        Submit
+      </button>
+      <button onClick={edit}>Edit</button>
+    </form>
   );
 }
