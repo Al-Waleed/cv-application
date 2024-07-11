@@ -3,7 +3,7 @@ import GeneralInfo from "./general-info";
 import EducationalExp from "./educational-exp";
 import PracticalExp from "./practical-exp";
 import Cv from "./cv";
-import "../styles/app.css"
+import "../styles/app.css";
 
 export default function App() {
   // states for GeneraInfo()
@@ -52,33 +52,42 @@ export default function App() {
   return (
     <>
       <main>
-
-      <GeneralInfo
-        nameValue={name}
-        changeName={handleNameChange}
-        phoneValue={phone}
-        changePhone={handlePhoneChange}
-        emailValue={email}
-        changeEmail={handleEmailChange}
+        <GeneralInfo
+          nameValue={name}
+          changeName={handleNameChange}
+          phoneValue={phone}
+          changePhone={handlePhoneChange}
+          emailValue={email}
+          changeEmail={handleEmailChange}
         />
-      <EducationalExp
-        schoolValue={school}
-        changeSchool={handleSchoolChange}
-        studyTitleValue={studyTitle}
-        changeStudyTitle={handleStudyTitleChange}
-        studyDateValue={studyDate}
-        changeStudyDate={handleStudyDateChange}
+        <EducationalExp
+          schoolValue={school}
+          changeSchool={handleSchoolChange}
+          studyTitleValue={studyTitle}
+          changeStudyTitle={handleStudyTitleChange}
+          studyDateValue={studyDate}
+          changeStudyDate={handleStudyDateChange}
         />
-      <PracticalExp
+        <PracticalExp
+          company={company}
+          changeCompany={handleCompanyChange}
+          position={position}
+          changePosition={handlePositionChange}
+          responsibilities={responsibilities}
+          changeResponsibilities={handleResponsibilitiesChange}
+        />
+      </main>
+      <Cv
+        name={name}
+        email={email}
+        phone={phone}
         company={company}
-        changeCompany={handleCompanyChange}
         position={position}
-        changePosition={handlePositionChange}
         responsibilities={responsibilities}
-        changeResponsibilities={handleResponsibilitiesChange}
-        />
-        </main>
-      <Cv />
+        school={school}
+        studyTitle={studyTitle}
+        studyDate={studyDate}
+      />
     </>
   );
 }
