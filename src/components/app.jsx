@@ -15,10 +15,12 @@ export default function App() {
   const [school, setSchool] = useState("");
   const [studyTitle, setStudyTitle] = useState("");
   const [studyDate, setStudyDate] = useState("");
+  const [educationalExpSent, setEducationalExpSent] = useState(false);
   // states for PracticalExp()
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
   const [responsibilities, setResponsibilities] = useState("");
+  const [practicalExpSent, setPracticalExpSent] = useState(false);
 
   // GeneralInfo() states handle function
   function handleNameChange(e) {
@@ -48,6 +50,14 @@ export default function App() {
   function handleStudyDateChange(e) {
     setStudyDate(e.target.value);
   }
+   function handleEducationalExpSubmit(e) {
+    e.preventDefault();
+    setEducationalExpSent(true);
+  }
+  function handleEducationalExpEdit(e) {
+    e.preventDefault();
+    setEducationalExpSent(false);
+  }
   // PracticalExp() states handle function
   function handleCompanyChange(e) {
     setCompany(e.target.value);
@@ -57,6 +67,14 @@ export default function App() {
   }
   function handleResponsibilitiesChange(e) {
     setResponsibilities(e.target.value);
+  }
+  function handlePracticalExpSubmit(e) {
+    e.preventDefault();
+    setPracticalExpSent(true);
+  }
+  function handlePracticalExpEdit(e) {
+    e.preventDefault();
+    setPracticalExpSent(false);
   }
   return (
     <>
@@ -79,6 +97,9 @@ export default function App() {
           changeStudyTitle={handleStudyTitleChange}
           studyDateValue={studyDate}
           changeStudyDate={handleStudyDateChange}
+          handleSubmit={handleEducationalExpSubmit}
+          isEducationalExpSent={educationalExpSent}
+          edit={handleEducationalExpEdit}
         />
         <PracticalExp
           company={company}
@@ -87,6 +108,9 @@ export default function App() {
           changePosition={handlePositionChange}
           responsibilities={responsibilities}
           changeResponsibilities={handleResponsibilitiesChange}
+          handleSubmit={handlePracticalExpSubmit}
+          isPracticalExpSent={practicalExpSent}
+          edit={handlePracticalExpEdit}
         />
       </main>
       <Cv

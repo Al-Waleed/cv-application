@@ -7,9 +7,12 @@ export default function EducationalExp({
   changeStudyTitle,
   studyDateValue,
   changeStudyDate,
+  isEducationalExpSent,
+  handleSubmit,
+  edit,
 }) {
   return (
-    <div id="educational-exp">
+    <form id="educational-exp" onSubmit={handleSubmit}>
       <h1>Educational Experience</h1>
 
       <label htmlFor="school">School name: </label>
@@ -18,6 +21,7 @@ export default function EducationalExp({
         id="school"
         value={schoolValue}
         onChange={changeSchool}
+        disabled={isEducationalExpSent}
       />
 
       <label htmlFor="study-title">Title Of Study: </label>
@@ -26,6 +30,7 @@ export default function EducationalExp({
         id="study-title"
         value={studyTitleValue}
         onChange={changeStudyTitle}
+        disabled={isEducationalExpSent}
       />
 
       <label htmlFor="study-date">Date of study: </label>
@@ -34,10 +39,13 @@ export default function EducationalExp({
         id="study-date"
         value={studyDateValue}
         onChange={changeStudyDate}
+        disabled={isEducationalExpSent}
       />
 
-      <button type="submit">Submit</button>
-      <button>Edit</button>
-    </div>
+      <button type="submit" disabled={isEducationalExpSent}>
+        Submit
+      </button>
+      <button onClick={edit}>Edit</button>
+    </form>
   );
 }

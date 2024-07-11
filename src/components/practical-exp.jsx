@@ -7,9 +7,12 @@ export default function PracticalExp({
   changePosition,
   responsibilities,
   changeResponsibilities,
+  isPracticalExpSent,
+  handleSubmit,
+  edit,
 }) {
   return (
-    <div id="practical-exp">
+    <form id="practical-exp" onSubmit={handleSubmit}>
       <h1>Practical Experience</h1>
 
       <label htmlFor="company">Company name: </label>
@@ -18,6 +21,7 @@ export default function PracticalExp({
         id="company"
         value={company}
         onChange={changeCompany}
+        disabled={isPracticalExpSent}
       />
 
       <label htmlFor="position">Position title: </label>
@@ -26,6 +30,7 @@ export default function PracticalExp({
         id="position"
         value={position}
         onChange={changePosition}
+        disabled={isPracticalExpSent}
       />
 
       <label htmlFor="responsibilities">
@@ -36,10 +41,13 @@ export default function PracticalExp({
         id="responsibilities"
         value={responsibilities}
         onChange={changeResponsibilities}
+        disabled={isPracticalExpSent}
       />
 
-      <button type="submit">Submit</button>
-      <button>Edit</button>
-    </div>
+      <button type="submit" disabled={isPracticalExpSent}>
+        Submit
+      </button>
+      <button onClick={edit}>Edit</button>
+    </form>
   );
 }
